@@ -1,0 +1,10 @@
+FLOW OF Project
+
+1-Set up the github {Repository}
+  a)new environment
+  b)setup.py
+  C)requirements.txt
+
+2-Create Source(src) folder & build the Packages
+
+3-Create Logging & exception Files
