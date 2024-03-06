@@ -8,3 +8,5 @@ FLOW OF Project
 2-Create Source(src) folder & build the Packages
 
 3-Create Logging & exception Files
+
+4-Data importing & EDA on same Data
