@@ -21,6 +21,8 @@ name='ML_Project_1',
 version='0.0.1',
 author='Rahul',
 author_email='rahulhattaragi96@gmail.com',
+package_dir={'': 'src'},
+py_modules=['logger'],
 packages=find_packages(),
 install_requires=get_requirements('requirements.txt')
 

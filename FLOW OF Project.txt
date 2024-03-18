@@ -10,3 +10,11 @@ FLOW OF Project
 3-Create Logging & exception Files
 
 4-Data importing & EDA on same Data
+
+5-Doing EDA on Jupyter Notebook
+
+6-Also Model Training On Jupyter Notebook
+
+7-Start Modular Coding
+
+8-Data Ingestion 
