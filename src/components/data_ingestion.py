@@ -9,6 +9,9 @@ from src.logger import logging
 
 from dataclasses import dataclass #It provides a way to create classes without manually writing boilerplate code such as __init__ and __repr__ methods
 
+
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 @dataclass  #This decorator automatically adds special methods like __init__, __repr__, __eq__, etc. based on the class attributes defined.
 class DataIngestionConfig: #in this class we recieve inputs
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -43,13 +46,15 @@ class DataIngestion:
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
             )
-            
+        
         except Exception as e:
             raise CustomException(e,sys)
 
 if __name__=="__main__":
     obj=DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data,test_data=obj.initiate_data_ingestion()
 
+    data_transformation=DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data)
 
         
