@@ -7,11 +7,16 @@ from sklearn.model_selection import train_test_split
 from src.exception import CustomException
 from src.logger import logging
 
+
 from dataclasses import dataclass #It provides a way to create classes without manually writing boilerplate code such as __init__ and __repr__ methods
 
 
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
+
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 @dataclass  #This decorator automatically adds special methods like __init__, __repr__, __eq__, etc. based on the class attributes defined.
 class DataIngestionConfig: #in this class we recieve inputs
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -55,6 +60,9 @@ if __name__=="__main__":
     train_data,test_data=obj.initiate_data_ingestion()
 
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    Modeltrainer=ModelTrainer()
+    print(Modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
         
