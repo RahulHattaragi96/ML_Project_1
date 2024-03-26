@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import dill
 
-from dataclasses import dataclass
+
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
@@ -113,7 +113,6 @@ class DataTransformation:
             raise CustomException(e,sys)
             
             
-
 
 
 
